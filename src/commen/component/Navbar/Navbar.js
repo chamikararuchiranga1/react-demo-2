@@ -56,7 +56,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-function Navbar () {
+function Navbar ({onChange}) {
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -165,6 +165,7 @@ function Navbar () {
                         color="inherit"
                         aria-label="open drawer"
                         sx={{ mr: 2 }}
+                        onClick={()=> onChange(true)}
                     >
                         <MenuIcon />
                     </IconButton>

@@ -1,7 +1,6 @@
 import React from "react";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -11,13 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-function Sidebar () {
-
-    const [state, setState] = React.useState(false);
-
-    const toggleDrawer = (open) => {
-        setState(open);
-    };
+function Sidebar ({toggleDrawer, state}) {
 
     const list = () => (
         <Box
@@ -57,7 +50,6 @@ function Sidebar () {
     return (
         <div>
             <React.Fragment>
-                <Button onClick={()=>toggleDrawer(true)}>Left</Button>
                 <Drawer
                     anchor={'left'}
                     open={state}
